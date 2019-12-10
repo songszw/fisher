@@ -1,12 +1,11 @@
 # @Time    : 2019/12/10 下午3:54
 # @Author  : songszw 
 # @Email   : songszw315@live.com
-from flask import jsonify, Blueprint
+from flask import jsonify
 
+from . import web
 from helper import is_isbn_or_key
 from yushu_book import YuShuBook
-
-web = Blueprint('web', __name__)
 
 
 @web.route('/book/search/<q>/<page>')
