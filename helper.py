@@ -9,7 +9,7 @@ def is_isbn_or_key(word):
     :param word:
     :return:
     """
-    isbn_or_key = 'key'
+    isbn_or_key = 'keyword'
     if len(word) == 13 and word.isdigit():
         isbn_or_key = 'isbn'
     short_word = word.replace('-', '')
