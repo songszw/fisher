@@ -36,10 +36,6 @@ def search():
             yushu_book.search_by_keyword(q, page)
 
         books.fill(yushu_book, q)
-
-        # abook = json.dumps(books, default=lambda o: o.__dict__)
-        # return abook
-        # return jsonify(books.__dict__)
     else:
         flash('搜索的关键字不符合要求，请重新输入关键字')
     return render_template('search_result.html', books=books)
@@ -47,4 +43,11 @@ def search():
 
 @web.route('/book/<isbn>/detail')
 def book_detail(isbn):
-    pass
+    yushu_book = YuShuBook()
+    yushu_book.search_by_isbn(isbn)
+    if yushu_book.first:
+        book = BookViewModel(yushu_book.first)
+        return render_template('book_detail.html', book=book, wishes=[], gifts=[])
+    # return json.dumps(book, default=lambda o: o.__dict__)
+
+

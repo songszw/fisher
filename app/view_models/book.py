@@ -14,6 +14,7 @@ class BookViewModel:
         self.price = book['price']
         self.summary = book['summary']
         self.image = book['image']
+        self.isbn = book['isbn']
 
     @property
     def intro(self):
@@ -32,7 +33,6 @@ class BookCollection:
         self.total = yushu_book.total
         self.keyword = keyword
         self.books = [BookViewModel(book) for book in yushu_book.books]
-        print(self.books)
 
 
 class _BookViewModel:
