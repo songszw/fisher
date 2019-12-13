@@ -1,7 +1,10 @@
-# @Time    : 2019/12/10 下午4:24
-# @Author  : songszw 
-# @Email   : songszw315@live.com
+"""
+@Time    : 2019/12/10 下午4:24
+@Author  : songszw
+@Email   : songszw315@live.com
+"""
 from flask import Flask
+from app.models.book import db
 
 
 def create_app():
@@ -9,6 +12,10 @@ def create_app():
     app.config.from_object('app.secure')
     app.config.from_object('app.setting')
     register_blueprint(app)
+
+    db.init_app(app)
+    db.create_all(app=app)
+
     return app
 
 

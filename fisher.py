@@ -1,6 +1,8 @@
-# @Time    : 2019/12/10 下午3:54
-# @Author  : songszw
-# @Email   : songszw315@live.com
+"""
+@Time    : 2019/12/11 上午11:29
+@Author  : songszw
+@Email   : songszw315@live.com
+"""
 from app import create_app
 
 app = create_app()
