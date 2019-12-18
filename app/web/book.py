@@ -14,7 +14,7 @@ from app.libs.helper import is_isbn_or_key
 from app.spider.yushu_book import YuShuBook
 
 
-@web.route('/book/search')
+@web.route('/book/search', methods=['GET', 'POST'])
 def search():
     """
     q:普通搜索  or  isbn搜索
@@ -48,6 +48,7 @@ def book_detail(isbn):
     if yushu_book.first:
         book = BookViewModel(yushu_book.first)
         return render_template('book_detail.html', book=book, wishes=[], gifts=[])
+
     # return json.dumps(book, default=lambda o: o.__dict__)
 
 

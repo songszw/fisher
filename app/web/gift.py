@@ -16,6 +16,3 @@ def save_to_gifts(isbn):
 @web.route('/gifts/<gid>/redraw')
 def redraw_from_gifts(gid):
     pass
-
-
-
