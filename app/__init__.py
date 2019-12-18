@@ -5,6 +5,9 @@
 """
 from flask import Flask
 from app.models.book import db
+from flask_login import LoginManager
+
+login_manager = LoginManager()
 
 
 def create_app():
@@ -14,7 +17,10 @@ def create_app():
     register_blueprint(app)
 
     db.init_app(app)
-    db.create_all(app=app)
+    login_manager.init_app(app)
+
+    with app.app_context():
+        db.create_all()
 
     return app
 
