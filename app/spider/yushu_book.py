@@ -41,6 +41,4 @@ class YuShuBook:
 
     @property
     def first(self):
-        print(self.books)
-
         return self.books[0] if self.total >= 1 else None

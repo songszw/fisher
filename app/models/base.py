@@ -3,8 +3,22 @@
 @Author  : songszw 
 @Email   : songszw315@live.com 
 """
-from flask_sqlalchemy import SQLAlchemy
+from contextlib import contextmanager
+
+from flask import flash
+from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
 from sqlalchemy import SmallInteger, Column, Integer, String
+
+
+class SQLAlchemy(_SQLAlchemy):
+    @contextmanager
+    def auto_commit(self):
+        try:
+            yield
+            self.session.commit()
+        except Exception as e:
+            self.session.rollback()
+            raise e
 
 
 db = SQLAlchemy()
@@ -13,6 +27,7 @@ db = SQLAlchemy()
 class Base(db.Model):
     __abstract__ = True
     status = Column(SmallInteger, default=1)
+    # create_time = Column('create_time', Integer)
 
     def set_attrs(self, attrs_dict):
         for key, value in attrs_dict.items():
