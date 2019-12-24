@@ -33,8 +33,3 @@ class Book(db.Model):
     isbn = Column(String(15), nullable=False, unique=True)
     summary = Column(String(1000))
     image = Column(String(50))
-
-
-
-
-

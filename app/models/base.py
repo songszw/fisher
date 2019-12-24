@@ -4,6 +4,7 @@
 @Email   : songszw315@live.com 
 """
 from contextlib import contextmanager
+from datetime import datetime
 
 from flask import flash
 from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
@@ -27,7 +28,10 @@ db = SQLAlchemy()
 class Base(db.Model):
     __abstract__ = True
     status = Column(SmallInteger, default=1)
-    # create_time = Column('create_time', Integer)
+    create_time = Column('create_time', Integer)
+
+    def __init__(self):
+        self.create_time = int(datetime.now().timestamp())
 
     def set_attrs(self, attrs_dict):
         for key, value in attrs_dict.items():

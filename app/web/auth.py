@@ -26,7 +26,7 @@ def login():
     if request.method == 'POST' and form.validate():
         user = User.query.filter_by(email=form.email.data).first()
         if user and user.check_password(form.password.data):
-            login_user(user, remember=True)
+            login_user(user)
             next = request.args.get('next')
             if not next or not next.startswith('/'):
                 next = url_for('web.index')
