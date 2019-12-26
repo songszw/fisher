@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9576e8fd-fa09-4dac-bafe-b315d83e85ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/view_models/gift.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/gift.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/gift.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/web/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/web/gift.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/gift.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,17 +49,17 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/spider" />
-      <recent name="$PROJECT_DIR$/app/libs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/web" />
       <recent name="$PROJECT_DIR$/app/templates" />
       <recent name="$PROJECT_DIR$/app/static" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/spider" />
+      <recent name="$PROJECT_DIR$/app/libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,7 +141,7 @@
       <workItem from="1577257670119" duration="5268000" />
       <workItem from="1577265082730" duration="420000" />
       <workItem from="1577265523906" duration="6775000" />
-      <workItem from="1577327257797" duration="5509000" />
+      <workItem from="1577327257797" duration="12671000" />
     </task>
     <servers />
   </component>

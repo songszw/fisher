@@ -3,13 +3,19 @@ from flask_login import login_required, current_user
 
 from app.models.base import db
 from app.models.gift import Gift
+from app.view_models.gift import MyGifts
 from . import web
 
 
 @web.route('/my/gifts')
 @login_required
 def my_gifts():
-    return 'MY GIFTS'
+    uid = current_user.id
+    gifts_of_mine = Gift.get_user_gifts(uid)
+    isbn_list = [gift.isbn for gift in gifts_of_mine]
+    wish_count_list = Gift.get_wish_count(isbn_list)
+    view_model = MyGifts(gifts_of_mine, wish_count_list)
+    return render_template('my_gifts.html', gifts=view_model.gifts)
 
 
 @web.route('/gifts/book/<isbn>')
