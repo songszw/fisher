@@ -3,9 +3,7 @@
 @Author  : songszw
 @Email   : songszw315@live.com
 """
-import json
-
-from flask import jsonify, request, render_template, flash
+from flask import request, render_template, flash
 from flask_login import current_user
 
 from app.forms.book import SearchForm
@@ -67,4 +65,3 @@ def book_detail(isbn):
 
     return render_template('book_detail.html', book=book, wishes=trade_wishes_model, gifts=trade_gifts_model,
                            has_in_gifts=has_in_gifts, has_in_wishes=has_in_wishes)
-
